@@ -12,14 +12,15 @@ import javax.swing.JPanel;
 public class Main {
     
     public static void main(String[] args) {
+        //Inicializamos las partes de la ventana
         JMenuBar jmb=new JMenuBar();
         PanelMain pm=new PanelMain(jmb);
         ActionListener ctrpp = new ControlPanelMain(pm);
         pm.controlador(ctrpp);
         
+        //Creamos la ventana
         JFrame windowFrame = new JFrame("Gestor de Dibujo");
         windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       
 	windowFrame.setContentPane((JPanel) pm);
         windowFrame.setJMenuBar(jmb);
 	windowFrame.pack();

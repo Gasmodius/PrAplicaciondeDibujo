@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -18,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class PanelMain extends JPanel {
     
-    private JButton bb,bAddAlarm;
+    private JButton bb,bAddAlarm,bVentanaAtras;
     private JMenuBar topMenu;
     
     public PanelMain(JMenuBar jm){
@@ -48,6 +49,7 @@ public class PanelMain extends JPanel {
                 //CAmbiar los nombres de los JMenuItem-------------------------------------------------------------------
         bb= new JButton("Hola");
         bAddAlarm= new JButton("Crear nueva Alarma");
+        bVentanaAtras=new JButton(new ImageIcon("flechaR.PNG"));
         
         // distribuición de los componentes en el panel
         setLayout(new BorderLayout());
@@ -81,6 +83,6 @@ public class PanelMain extends JPanel {
     }
 
     public void controlador(ActionListener ctr){
-            
+        //Cuando haya que conectarse con el controlador
     }
 }

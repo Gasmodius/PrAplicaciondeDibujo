@@ -13,8 +13,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
-
-
+/**
+ *
+ * @author Oscureo
+ */
 public class PanelImage extends JPanel implements MouseListener,MouseMotionListener,MouseWheelListener{
     
     private final ImageIcon image;
