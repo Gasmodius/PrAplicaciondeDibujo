@@ -2,6 +2,7 @@ package praplicaciondibujo;
 
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 /**
@@ -11,18 +12,20 @@ import javax.swing.JPanel;
 public class Main {
     
     public static void main(String[] args) {
-        PanelMain pp=new PanelMain();
-        ActionListener ctrpp = new ControlPanelMain(pp);
-        pp.controlador(ctrpp);
+        JMenuBar jmb=new JMenuBar();
+        PanelMain pm=new PanelMain(jmb);
+        ActionListener ctrpp = new ControlPanelMain(pm);
+        pm.controlador(ctrpp);
         
-        JFrame ventana = new JFrame("Gestor de Dibujo");
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame windowFrame = new JFrame("Gestor de Dibujo");
+        windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
-	ventana.setContentPane((JPanel) pp);
-	ventana.pack();
-	ventana.setVisible(true);
-        ventana.setResizable(false);//prohibido cambiar tamaño de la ventana =D
-        ventana.setLocationRelativeTo(null);//se centra en la pantalla =D
+	windowFrame.setContentPane((JPanel) pm);
+        windowFrame.setJMenuBar(jmb);
+	windowFrame.pack();
+	windowFrame.setVisible(true);
+        windowFrame.setResizable(false);//prohibido cambiar tamaño de la ventana =D
+        windowFrame.setLocationRelativeTo(null);//se centra en la pantalla =D
     }
     
 }
