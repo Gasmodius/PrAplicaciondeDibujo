@@ -19,7 +19,7 @@ import javax.swing.JPanel;
  */
 public class PanelMain extends JPanel {
     
-    private JButton bb,bAddAlarm,bVentanaAtras;
+    private JButton bAddcomic,bDeletecomic,bAddAlarm,bnextAlarm,bVentanaAtras;
     private JMenuBar topMenu;
     
     public PanelMain(JMenuBar jm){
@@ -32,13 +32,13 @@ public class PanelMain extends JPanel {
         topMenu.add(view);
         topMenu.add(alarm);
         
-        JMenuItem item1=new JMenuItem("Accion 1");
-        JMenuItem item2=new JMenuItem("Accion 2");
+        JMenuItem item1=new JMenuItem("Crear uno comic");
+        JMenuItem item2=new JMenuItem("Borrar Comic");
         JMenuItem item3=new JMenuItem("Accion 3");
         JMenuItem item4=new JMenuItem("Accion 4");
         JMenuItem item5=new JMenuItem("Accion 5");
         JMenuItem item6=new JMenuItem("Accion 6");
-        JMenuItem item7=new JMenuItem("Accion 7");
+        JMenuItem item7=new JMenuItem("Crear nueva Alarma");
         file.add(item1);
         file.add(item2);
         view.add(item3);
@@ -47,10 +47,11 @@ public class PanelMain extends JPanel {
         view.add(item6);
         alarm.add(item7);
                 //CAmbiar los nombres de los JMenuItem-------------------------------------------------------------------
-        bb= new JButton("Hola");
+        bAddcomic= new JButton("Añadir nuevo comic");
+        bDeletecomic=new JButton("Borrar comic");
         bAddAlarm= new JButton("Crear nueva Alarma");
         bVentanaAtras=new JButton(new ImageIcon("flechaR.PNG"));
-        
+        bnextAlarm=new JButton("Alarma Proxima");
         // distribuición de los componentes en el panel
         setLayout(new BorderLayout());
         
@@ -61,20 +62,25 @@ public class PanelMain extends JPanel {
         
         //Ventana centrada Parte superior con un menu
         JPanel pCenterMenu=new JPanel();
-        pCenterMenu.add(bb);
-        pCenterMenu.add(new JButton("muajajaja"));
+        pCenterMenu.add(bAddcomic);
+        pCenterMenu.add(bDeletecomic);
+        pCenterMenu.add(bVentanaAtras);
         
         //Ventana centrada donde se visualiza el contenido
         PanelImage pCenterDibu=new PanelImage("vineta.PNG");
-        panelCenter.setPreferredSize(new Dimension(500, 500));//Esto no deberia ser asi
+        panelCenter.setPreferredSize(new Dimension(600, 500));//Esto no deberia ser asi
         
         panelCenter.add(pCenterMenu,BorderLayout.NORTH);
         panelCenter.add(pCenterDibu,BorderLayout.CENTER);
         
         //Panel Segundario donde se muestran las alarmas
         JPanel panelAlarm=new JPanel();
+        JPanel menualarm=new JPanel();
+        menualarm.add(bAddAlarm);
+        menualarm.add(bnextAlarm);
+        
         panelAlarm.setLayout(new GridLayout(6,0));
-        panelAlarm.add(bAddAlarm);
+        panelAlarm.add(menualarm);
         panelAlarm.add(new JLabel("No olvides ponerlo bonito"));
         panelAlarm.add(new JLabel("No olvides aprobarme"));
         panelAlarm.add(new JLabel("A las 18:00 sale el proximo cap"));
