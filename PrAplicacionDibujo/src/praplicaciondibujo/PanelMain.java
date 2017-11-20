@@ -1,14 +1,13 @@
 package praplicaciondibujo;
 
 import java.awt.BorderLayout;
-import java.awt.Window;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+
 
 /**
  *
@@ -16,7 +15,7 @@ import javax.swing.SwingUtilities;
  */
 public class PanelMain extends JPanel {
     
-    private JButton bb,ala;
+    private JButton bb,bAddAlarm;
     private JMenuBar topMenu;
     
     public PanelMain(JMenuBar jm){
@@ -30,19 +29,30 @@ public class PanelMain extends JPanel {
         topMenu.add(alarm);
                 //REllename de JMenuItem-----------------------------------
         bb= new JButton("Hola");
-        ala= new JButton("Crear alarma");
+        bAddAlarm= new JButton("Crear nueva Alarma");
         
         // distribuición de los componentes en el panel
         setLayout(new BorderLayout());
         
         //Panel Principal donde se muestra la informacion
-        JPanel panelCenter=new JPanel();
-        panelCenter.add(bb);
+        JPanel panelCenter=new PanelImage("vineta.PNG");
+        panelCenter.setLayout(new BorderLayout());
         add(panelCenter,BorderLayout.CENTER);
+        
+        //Ventana centrada Parte superior con un menu
+        JPanel pCenterMenu=new JPanel();
+        pCenterMenu.add(bb);
+        pCenterMenu.add(new JButton("muajajaja"));
+        
+        //Ventana centrada donde se visualiza el contenido
+        JPanel pCenterDibu=new JPanel();
+        
+        panelCenter.add(pCenterMenu,BorderLayout.NORTH);
+        panelCenter.add(pCenterDibu,BorderLayout.CENTER);
         
         //Panel Segundario donde se muestran las alarmas
         JPanel panelAlarm=new JPanel();
-        panelAlarm.add(ala);
+        panelAlarm.add(bAddAlarm);
         add(panelAlarm,BorderLayout.EAST);
     }
 
