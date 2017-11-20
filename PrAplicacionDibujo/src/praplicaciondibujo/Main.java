@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Oscureo jajajjajaajjajavsfvdfv
+ * @author Oscureo
  */
 public class Main {
     
